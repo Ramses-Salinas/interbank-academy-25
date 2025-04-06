@@ -1,0 +1,9 @@
+C:\Git\interbank-academy-25\src\main\java\pe\interbank\adapters\in\csv\TransactionCsvDTO.java
+C:\Git\interbank-academy-25\src\main\java\pe\interbank\adapters\in\csv\TransactionsImporterCSV.java
+C:\Git\interbank-academy-25\src\main\java\pe\interbank\application\TransactionsProcessCSV.java
+C:\Git\interbank-academy-25\src\main\java\pe\interbank\domain\models\Transaction.java
+C:\Git\interbank-academy-25\src\main\java\pe\interbank\domain\TransactionsProcess.java
+C:\Git\interbank-academy-25\src\main\java\pe\interbank\ports\in\TransactionsImporter.java
+C:\Git\interbank-academy-25\src\main\java\pe\interbank\domain\utils\TransactionsProcessUtil.java
+C:\Git\interbank-academy-25\src\main\java\pe\interbank\adapters\in\Main.java
+C:\Git\interbank-academy-25\src\main\java\pe\interbank\ports\out\TransactionsProcessServices.java
