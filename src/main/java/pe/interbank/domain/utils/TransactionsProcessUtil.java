@@ -15,7 +15,7 @@ public class TransactionsProcessUtil {
 		try {
 			for(Transaction tran : trans) {
 				
-				switch(tran.getType().toLowerCase()) {
+				switch(tran.getType().toLowerCase()) {//Se separa las operaciones según su tipo para después restarlas
 					case "débito":
 						debit = debit.add(tran.getAmount());
 						break;
@@ -38,7 +38,7 @@ public class TransactionsProcessUtil {
 	}
 	
 	public static String highestAmount(List<Transaction> trans) throws Exception {
-		try {
+		try {//Se busca la operación con mayor valor, asumiendo la primera como la mayor para después compararla con el resto
 			BigDecimal highestValue = trans.get(0).getAmount();
 			Integer id = trans.get(0).getId();
 			
@@ -62,7 +62,7 @@ public class TransactionsProcessUtil {
 		int debit = 0;
 		
 		try {
-			for(Transaction tran : trans) {
+			for(Transaction tran : trans) {//Se cuenta la cantidad de operaciones según su tipo
 				
 				switch(tran.getType().toLowerCase()) {
 					case "débito":

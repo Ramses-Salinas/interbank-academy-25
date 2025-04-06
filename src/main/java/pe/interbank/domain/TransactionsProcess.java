@@ -9,6 +9,7 @@ import pe.interbank.domain.utils.TransactionsProcessUtil;
 public class TransactionsProcess {
 	
 	public static String reportOfTransactions(List<Transaction> trans) throws Exception {
+		//Se obtiene el resultado de cada operación
 		BigDecimal finalBalance = TransactionsProcessUtil.finalBalance(trans);
 		String highestAmount = TransactionsProcessUtil.highestAmount(trans);
 		String countTotalAmounts = TransactionsProcessUtil.countTotalAmounts(trans);

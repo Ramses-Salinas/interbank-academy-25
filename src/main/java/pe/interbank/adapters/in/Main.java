@@ -6,7 +6,7 @@ import pe.interbank.ports.out.TransactionsProcessServices;
 public class Main {
 	
 	public static void main(String [] args) {
-		if(args.length == 1) {
+		if(args.length == 1) {// se valida que haya un solo argumento que debería ser el path del archivo CSV
 			TransactionsProcessServices process = new TransactionsProcessCSV();
 			try {
 				String result = process.resultOfProcess(args[0]);

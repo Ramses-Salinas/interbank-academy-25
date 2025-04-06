@@ -21,15 +21,19 @@ public class TransactionsImporterCSV implements TransactionsImporter{
 
 	@Override
 	public List<Transaction> importer(File dataFile) throws Exception {
+		/*
+		 * Se inicializa el reader con el File correspondiente al path ingresado por el usuario
+		 * y se establece el charset UTF-8 para evitar problemas con los tildes
+		 * */
 		try(Reader reader = new InputStreamReader(new FileInputStream(dataFile), StandardCharsets.UTF_8)){
-			CsvToBean<TransactionCsvDTO> transBean = new CsvToBeanBuilder<TransactionCsvDTO>(reader)
-					.withType(TransactionCsvDTO.class)
-					.withIgnoreLeadingWhiteSpace(true)
-					.withThrowExceptions(false)
+			CsvToBean<TransactionCsvDTO> transBean = new CsvToBeanBuilder<TransactionCsvDTO>(reader)//Se mapea cada transacción para obtener un bean por cada una de ellas
+					.withType(TransactionCsvDTO.class)//Se establece la clase a la que perteneceran los objetos resultantes
+					.withIgnoreLeadingWhiteSpace(true)//Se ignoran espacios en blancos al inicio de los campos
+					.withThrowExceptions(false)//Evita que el parser se caiga si consigue una fila mal formateada
 					.build();
-			List<TransactionCsvDTO> transactionsDTO = transBean.parse();
+			List<TransactionCsvDTO> transactionsDTO = transBean.parse();//Se aplica el parse y se obtiene una lista de objetos
 			List<Transaction> transactions = transactionsDTO.stream()
-					.map(TransactionsImporterCSV::mapperDTOtoTransaction)
+					.map(TransactionsImporterCSV::mapperDTOtoTransaction)//Se obtiene una lista de objetos independientes del origen de los datos
 					.toList();
 			return transactions;
 		} catch (FileNotFoundException e) {
