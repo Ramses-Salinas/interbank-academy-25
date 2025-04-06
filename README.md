@@ -58,6 +58,7 @@ Considerando que esta aplicación con el tiempo pueda llegar a requerir aceptar 
 **Otras decisiones de diseño:**
 - Se tuvo en cuenta en todo momento la separación de responsabilidades y demás instrucciones que hacen parte de los principios SOLID.
 - Se utilizó OpenCSV para la lectura de CSV debido a que se considera que la estructra de los mismos es sencilla, además que esta dependencia permite utilizar beans y anotaciones.
+- Se uilizó el **jdk 1.8** para generar el jar del proyecto y se considero esta versión al momento de códificar y añadir la dependencia.
 
 ### Lógica implementada
 A continuación se presenta un flujo resumido para explicar la lógica de la aplicación.
@@ -73,7 +74,7 @@ A continuación se presenta un flujo resumido para explicar la lógica de la apl
 
 ## Estructura del Proyecto
 La estructura de carpetas principales es la siguiente:
-
+```
 src/main/java/
 └── pe/interbank/
     ├── adapters/
@@ -95,4 +96,4 @@ src/main/java/
     │   │   └── TransactionsImporter.java
     │   └── out/
     │       └── TransactionsProcessServices.java
-
+```
